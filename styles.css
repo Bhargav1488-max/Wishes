@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.greeting {
+    text-align: center;
+    padding: 30px 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.main-text {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    margin: 40px 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait-slide {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60vh;
+}
+
+.landscape-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .slideshow {
+        height: 50vh;
+    }
+    
+    .caption {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        max-width: 90%;
+        bottom: 12px;
+    }
+    
+    .particles {
+        display: none;
+    }
+    
+    .portrait-slide {
+        min-height: 50vh;
+    }
+    
+    .landscape-slide {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .caption {
+        font-size: 1rem;
+        padding: 10px 15px;
+        max-width: 95%;
+    }
+    
+    .slideshow {
+        height: 40vh;
+    }
+}
